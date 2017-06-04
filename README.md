@@ -3,11 +3,11 @@ Self-Driving Car Engineer Nanodegree Program
 
 ## Summary
 
-This repository contains a C++ implementation of an PID controller to be used with the Udacity simulator available at https://github.com/udacity/self-driving-car-sim. It has been implemented as part of the Udacity Self-Driving Car Engineer Nanodegree Program.
+This repository contains a C++ implementation of a PID controller to be used with the Udacity simulator available at https://github.com/udacity/self-driving-car-sim. It has been implemented as part of the Udacity Self-Driving Car Engineer Nanodegree Program.
 
 ## PID tuning
 
-The tuning of the Kp, Ki, and Kd gains has been implemented manually. First the Kp value has been tuned until the car oscillated more or less regularly, then the Kd value has been tuned until the car managed to successfully complete the whole track, then the Ki has been tuned.
+The tuning of the Kp, Ki, and Kd gains has been implemented manually. First the Kp value has been tuned until the car oscillated more or less regularly, then the Kd value has been tuned until the car managed to successfully complete the whole track, then the Ki has been tuned to reach acceptable stability (i.e. a local minimum)
 
 Please read here below the sequence of steps:
 
@@ -24,14 +24,14 @@ Please read here below the sequence of steps:
 * std::vector<double> p = {0.225,1.0,2.25}; // iteration 11 -> goes off-track almost immediately (Kp, Kd, Ki)
 * std::vector<double> p = {0.225,0.1,2.25}; // iteration 12 -> goes off-track almost immediately (Kp, Kd, Ki)
 * std::vector<double> p = {0.225,0.001,2.25}; // iteration 13 -> able to complete the track, some minor oscillations during curves (Kp, Kd only) -> candidate 3
-* std::vector<double> p = {0.275,0.001,2.55}; // iteration 12 -> fine tuning, average CTE printed out during execution -> candidate 4
-* std::vector<double> p = {0.250,0.001,2.75}; // iteration 13 -> fine tuning, average CTE printed out during execution -> candidate 5
-* std::vector<double> p = {0.235,0.001,2.75}; // iteration 14 -> fine tuning, average CTE printed out during execution -> candidate 6
-* std::vector<double> p = {0.235,0.005,2.75}; // iteration 15 -> steering during curves is less abrupt -> candidate 7 -> selected
-* std::vector<double> p = {0.235,0.008,2.75}; // iteration 16 -> minor oscillations
-* std::vector<double> p = {0.235,0.003,2.75}; // iteration 17 -> some oscillations, especially when leaving the bridge
+* std::vector<double> p = {0.275,0.001,2.55}; // iteration 14 -> fine tuning, average CTE printed out during execution -> candidate 4
+* std::vector<double> p = {0.250,0.001,2.75}; // iteration 15 -> fine tuning, average CTE printed out during execution -> candidate 5
+* std::vector<double> p = {0.235,0.001,2.75}; // iteration 16 -> fine tuning, average CTE printed out during execution -> candidate 6
+* std::vector<double> p = {0.235,0.005,2.75}; // iteration 17 -> steering during curves is less abrupt -> candidate 7 -> selected
+* std::vector<double> p = {0.235,0.008,2.75}; // iteration 18 -> minor oscillations
+* std::vector<double> p = {0.235,0.003,2.75}; // iteration 19 -> some oscillations, especially when leaving the bridge
 
-The following values have been selected:
+The following values have been selected (iteration 17):
 
 * Kp: 0.235
 * Ki: 0.005
