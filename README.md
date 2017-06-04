@@ -33,11 +33,12 @@ Please read here below the sequence of steps:
 
 The following values have been selected (iteration 17):
 
-* Kp: 0.235
-* Ki: 0.005
-* Kd: 2.75
+* *Kp: 0.235*
+* *Ki: 0.005*
+* *Kd: 2.75*
 
 The values above allow the car to successfully complete the track and minimize the oscillations.
+
 ---
 
 ## Dependencies
