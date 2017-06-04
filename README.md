@@ -11,25 +11,25 @@ The tuning of the Kp, Ki, and Kd gains has been implemented manually. First the 
 
 Please read here below the sequence of steps:
 
-* std::vector<double> p = {0.2,0.0,0.00}; // iteration 1 -> diverges (Kp only)
-* std::vector<double> p = {1.2,0.0,0.00}; // iteration 2 -> diverges (Kp only)
-* std::vector<double> p = {0.5,0.0,0.00}; // iteration 3 -> diverges (Kp only)
-* std::vector<double> p = {0.250,0.0,0.00}; // iteration 4 -> slightly diverges (Kp only)
-* std::vector<double> p = {0.225,0.0,0.00}; // iteration 5 -> quite stable oscillations (Kp only)
-* std::vector<double> p = {0.225,0.0,1.00}; // iteration 6 -> able to complete the track, some oscillations on the bridge part (Kp, Kd only)
-* std::vector<double> p = {0.225,0.0,2.00}; // iteration 7 -> able to complete the track, less oscillations on the bridge part  (Kp, Kd only) -> candidate 1
-* std::vector<double> p = {0.225,0.0,3.00}; // iteration 8 -> able to complete the track, more oscillations during curves (Kp, Kd only)
-* std::vector<double> p = {0.225,0.0,2.50}; // iteration 9 -> able to complete the track, still more oscillations during curves (Kp, Kd only)
-* std::vector<double> p = {0.225,0.0,2.25}; // iteration 10 -> able to complete the track, still more oscillations during curves (Kp, Kd only) -> candidate 2
-* std::vector<double> p = {0.225,1.0,2.25}; // iteration 11 -> goes off-track almost immediately (Kp, Kd, Ki)
-* std::vector<double> p = {0.225,0.1,2.25}; // iteration 12 -> goes off-track almost immediately (Kp, Kd, Ki)
-* std::vector<double> p = {0.225,0.001,2.25}; // iteration 13 -> able to complete the track, some minor oscillations during curves (Kp, Kd only) -> candidate 3
-* std::vector<double> p = {0.275,0.001,2.55}; // iteration 14 -> fine tuning, average CTE printed out during execution -> candidate 4
-* std::vector<double> p = {0.250,0.001,2.75}; // iteration 15 -> fine tuning, average CTE printed out during execution -> candidate 5
-* std::vector<double> p = {0.235,0.001,2.75}; // iteration 16 -> fine tuning, average CTE printed out during execution -> candidate 6
-* std::vector<double> p = {0.235,0.005,2.75}; // iteration 17 -> steering during curves is less abrupt -> candidate 7 -> selected
-* std::vector<double> p = {0.235,0.008,2.75}; // iteration 18 -> minor oscillations
-* std::vector<double> p = {0.235,0.003,2.75}; // iteration 19 -> some oscillations, especially when leaving the bridge
+* p = {0.2,0.0,0.00}; // iteration 1 -> diverges (Kp only)
+* p = {1.2,0.0,0.00}; // iteration 2 -> diverges (Kp only)
+* p = {0.5,0.0,0.00}; // iteration 3 -> diverges (Kp only)
+* p = {0.250,0.0,0.00}; // iteration 4 -> slightly diverges (Kp only)
+* p = {0.225,0.0,0.00}; // iteration 5 -> quite stable oscillations (Kp only)
+* p = {0.225,0.0,1.00}; // iteration 6 -> able to complete the track, some oscillations on the bridge part (Kp, Kd only)
+* p = {0.225,0.0,2.00}; // iteration 7 -> able to complete the track, less oscillations on the bridge part  (Kp, Kd only) -> candidate 1
+* p = {0.225,0.0,3.00}; // iteration 8 -> able to complete the track, more oscillations during curves (Kp, Kd only)
+* p = {0.225,0.0,2.50}; // iteration 9 -> able to complete the track, still more oscillations during curves (Kp, Kd only)
+* p = {0.225,0.0,2.25}; // iteration 10 -> able to complete the track, still more oscillations during curves (Kp, Kd only) -> candidate 2
+* p = {0.225,1.0,2.25}; // iteration 11 -> goes off-track almost immediately (Kp, Kd, Ki)
+* p = {0.225,0.1,2.25}; // iteration 12 -> goes off-track almost immediately (Kp, Kd, Ki)
+* p = {0.225,0.001,2.25}; // iteration 13 -> able to complete the track, some minor oscillations during curves (Kp, Kd only) -> candidate 3
+* p = {0.275,0.001,2.55}; // iteration 14 -> fine tuning, average CTE printed out during execution -> candidate 4
+* p = {0.250,0.001,2.75}; // iteration 15 -> fine tuning, average CTE printed out during execution -> candidate 5
+* p = {0.235,0.001,2.75}; // iteration 16 -> fine tuning, average CTE printed out during execution -> candidate 6
+* p = {0.235,0.005,2.75}; // iteration 17 -> steering during curves is less abrupt -> candidate 7 -> selected
+* p = {0.235,0.008,2.75}; // iteration 18 -> minor oscillations
+* p = {0.235,0.003,2.75}; // iteration 19 -> some oscillations, especially when leaving the bridge
 
 The following values have been selected (iteration 17):
 
