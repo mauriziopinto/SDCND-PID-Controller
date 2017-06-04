@@ -1,4 +1,4 @@
-# CarND-Controls-PID
+# SDNCD-PID-Controller
 Self-Driving Car Engineer Nanodegree Program
 
 ## Summary
